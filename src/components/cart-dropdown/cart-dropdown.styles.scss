@@ -16,7 +16,18 @@
       display: flex;
       flex-direction: column;
       overflow: scroll;
+
+
+      .empty-cart-message {
+        font-size: 15px;
+        margin: 50px auto;
+        display: flex;
+        text-align: center;
+       
+      }
     }
+
+    
   
     button {
       margin-top: auto;
