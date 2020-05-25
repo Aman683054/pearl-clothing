@@ -2,9 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {clearItem, addItems, removeItem} from "../../redux/cart/cart.action";
+
 import "./checkout-item.styles.scss";
 
 const CheckOutItem = ({item, removeItem, addItem, clearItem}) =>{
+    const totalPrice = item.quantity * item.price;
     return(
         <div className="checkout-item">
             <div className="image-container">
@@ -22,9 +24,13 @@ const CheckOutItem = ({item, removeItem, addItem, clearItem}) =>{
             <div className="price">
                 <span>{item.price}</span>
             </div>
+            <div className="price">
+                <span>{totalPrice}</span>
+            </div>
             <div className="remove-button" onClick={() => clearItem(item)}>
                 <span>&#10006;</span>
             </div>
+            
 
         </div>
     )
