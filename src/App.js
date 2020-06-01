@@ -10,6 +10,8 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 import {setCurrentUser} from './redux/user/user.action';
 import {selectCurrentUser} from "./redux/user/user.selector";
+// import {selectCollectionForPreview} from "./redux/shop/shop.selector";
+// import {addCollectionsAndDocuments} from './firebase/firebase.utils';
 
 import './App.css';
 
@@ -40,6 +42,7 @@ class App extends React.Component {
       }
       
     setCurrentUser(userAuth);
+    // addCollectionsAndDocuments('collections', collectionArray.map(({title, items}) => ({title, items})))
     })
   }
 
@@ -71,7 +74,9 @@ class App extends React.Component {
 
 
 const mapStateToProps = state => ({
-  currentUser: selectCurrentUser(state)
+  currentUser: selectCurrentUser(state),
+  // collectionArray: selectCollectionForPreview(state)
+
 })
 
 const mapDispatchToProps = dispatch => (
